@@ -1,3 +1,4 @@
+![My image](./filmpicker.png)
 # FilmPicker 🎬
 
 **FilmPicker** is a simple CLI application built to help you discover movies based on genres. You can search for films, view their details, and even save your favorite films for later. This tool is especially helpful when you're struggling to decide what to watch!
