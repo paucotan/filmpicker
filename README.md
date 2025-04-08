@@ -17,7 +17,36 @@ To run this app locally, you need:
 - `dotenv` gem for loading environment variables (API keys)
 - An active API key for [The Movie Database (TMDb)](https://www.themoviedb.org/). You will need to create a `.env` file with your API key.
 
-## Usage
+### Installation
+1. **Clone the repository**:
+
+  ```bash
+   git clone https://github.com/yourusername/filmpicker.git
+   cd filmpicker
+   ```
+
+2. Install dependencies:
+If you’re starting with this repo for the first time, make sure to install the required gems.
+
+```bash
+gem install dotenv
+```
+
+3. Set up the environment file:
+	•	Create a .env file in the root of your project folder.
+	•	Add your TMDb API key like this:
+
+  TMDB_API_KEY=your_api_key_here
+
+4. Run the app:
+In your terminal, run:
+
+```bash
+ruby filmpicker.rb
+```
+The app will prompt you to choose what you’d like to do: find a movie, see your saved movies, or exit.
+
+### Usage
 
 Once you run the application, you will have the following options:
 	1.	Find a film to watch: Choose a genre, view a list of movies, and see movie details.
