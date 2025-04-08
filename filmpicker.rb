@@ -110,17 +110,55 @@ def show_saved
   puts "\nSaved Movies:"
   puts ""
 
-  # Check if the file exists and is not empty
   if File.exist?('saved_movies.json') && !File.zero?('saved_movies.json')
-    File.readlines('saved_movies.json').each do |line|
+    File.readlines('saved_movies.json').each_with_index do |line, index|
       movie = JSON.parse(line)
-      puts "#{movie['title']} (#{movie['release_date']})"
+      puts "#{index + 1}. #{movie['title']} (#{movie['release_date']})"
+    end
+    puts "---------------"
+    puts "Would you like to delete any of these films? \nEnter the number of the movie, or press 0 to skip."
+    movie_index = gets.chomp.to_i
+
+    if movie_index > 0 && movie_index <= File.readlines('saved_movies.json').size
+      lines = File.readlines('saved_movies.json')
+      lines.delete_at(movie_index - 1)
+      File.open('saved_movies.json', 'w') { |file| file.puts lines }
+      puts "Movie deleted successfully."
+    else
+      puts "No movie selected."
     end
   else
     puts "You have no saved movies."
   end
 end
 
+# Function to delete a saved movie
+def delete_saved
+  puts "\nSaved Movies:"
+  puts ""
+
+  # Check if the file exists and is not empty
+  if File.exist?('saved_movies.json') && !File.zero?('saved_movies.json')
+    File.readlines('saved_movies.json').each_with_index do |line, index|
+      movie = JSON.parse(line)
+      puts "#{index + 1}. #{movie['title']} (#{movie['release_date']})"
+    end
+
+    puts "Enter the number of the movie you want to delete, or press 0 to skip."
+    movie_index = gets.chomp.to_i
+
+    if movie_index > 0 && movie_index <= File.readlines('saved_movies.json').size
+      lines = File.readlines('saved_movies.json')
+      lines.delete_at(movie_index - 1)
+      File.open('saved_movies.json', 'w') { |file| file.puts lines }
+      puts "Movie deleted successfully."
+    else
+      puts "No movie selected."
+    end
+  else
+    puts "You have no saved movies."
+  end
+end
 loop do
   choice = welcome
   handle_user_choice(choice)
