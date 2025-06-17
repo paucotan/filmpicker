@@ -1,71 +1,73 @@
-![My image](./filmpicker.png)
+![FilmPicker Logo](./filmpicker.png)
+
 # FilmPicker 🎬
 
-**FilmPicker** is a simple CLI application built to help you discover movies based on genres. You can search for films, view their details, and even save your favorite films for later. This tool is especially helpful when you're struggling to decide what to watch!
+> **Never know what to watch?** FilmPicker helps you discover movies by genre, explore details, and build your personal watchlist—all from your terminal.
 
-## Features
-- **Genre-based movie search**: Select a genre and get a list of films.
-- **View movie details**: See the title, release date, overview, and language of the movie.
-- **Save your favorites**: Add your favorite movies to a "saved list" and view them later.
-- **Easy-to-use CLI**: Simple interface to interact with the app in your terminal.
+## ✨ What FilmPicker Does
 
-## Getting Started
+- 🎭 **Browse by Genre** - Explore movies from action to romance
+- 📖 **Rich Movie Details** - View ratings, plots, release dates, and more
+- ⭐ **Personal Watchlist** - Save favorites for later viewing
+- 🚀 **Lightning Fast** - Simple CLI interface, no browser needed
 
-### Prerequisites
-To run this app locally, you need:
-- Ruby (version 2.0 or higher)
-- `dotenv` gem for loading environment variables (API keys)
-- An active API key for [The Movie Database (TMDb)](https://www.themoviedb.org/). You will need to create a `.env` file with your API key.
+## 🚀 Quick Start
 
-### Installation
-1. **Clone the repository**:
+### What You Need
+- **Ruby** 2.0+ ([Install Ruby](https://www.ruby-lang.org/en/documentation/installation/))
+- **TMDb API Key** - Free from [The Movie Database](https://www.themoviedb.org/settings/api)
 
-  ```bash
-   git clone https://github.com/yourusername/filmpicker.git
+### Get Running in 3 Steps
+
+1. **Clone and Setup**
+   ```bash
+   git clone https://github.com/paucotan/filmpicker.git
    cd filmpicker
+   gem install dotenv
    ```
 
-2. Install dependencies:
-If you’re starting with this repo for the first time, make sure to install the required gems.
+2. **Add Your API Key**
+   ```bash
+   # Create .env file in project root
+   echo "TMDB_API_KEY=your_api_key_here" > .env
+   ```
 
-```bash
-gem install dotenv
-```
+3. **Start Exploring**
+   ```bash
+   ruby filmpicker.rb
+   ```
 
-3. Set up the environment file:
-	•	Create a .env file in the root of your project folder.
-	•	Add your TMDb API key like this:
+## 🎯 How to Use
 
-  TMDB_API_KEY=your_api_key_here
+When you run FilmPicker, you'll see three simple options:
 
-4. Run the app:
-In your terminal, run:
+1. **🔍 Find a film to watch**
+   - Pick a genre (Action, Comedy, Drama, etc.)
+   - Browse through movie recommendations
+   - View detailed information about any film
+   - Save interesting movies to your watchlist
 
-```bash
-ruby filmpicker.rb
-```
-The app will prompt you to choose what you’d like to do: find a movie, see your saved movies, or exit.
+2. **📋 See saved films**
+   - Review your personal collection
+   - Remove movies you're no longer interested in
 
-### Usage
+3. **🚪 Exit**
+   - Close the application
 
-Once you run the application, you will have the following options:
-	1.	Find a film to watch: Choose a genre, view a list of movies, and see movie details.
-	2.	See saved films: View a list of movies you’ve saved to your favorites.
-	3.	Exit: Quit the application.
+## 💾 Your Watchlist
 
-## Saving Movies
+Movies you save are stored in `saved_movies.json` - your personal film database that persists between sessions.
 
-When you select a movie you like, you can choose to add it to your favorites list. This will save the movie’s details to a saved_movies.json file for later reference.
+## 🤝 Contributing
 
-## Contributing
+Found a bug? Have an idea? Contributions welcome!
 
-Feel free to fork this project, submit issues, or contribute improvements! Here’s how you can contribute:
-	1.	Fork the repository
-	2.	Create a feature branch (git checkout -b feature-branch)
-	3.	Commit your changes (git commit -am 'Add new feature')
-	4.	Push to the branch (git push origin feature-branch)
-	5.	Open a pull request on GitHub
+1. Fork the repo
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit changes: `git commit -am 'Add some feature'`
+4. Push to branch: `git push origin my-new-feature`
+5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License
+MIT License - feel free to use this project however you'd like!
